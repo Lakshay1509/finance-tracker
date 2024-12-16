@@ -66,7 +66,7 @@ export const Navigation = () => {
                     focus:bg-white/30 transition">
 
                         <Menu className="
-                        size-4" />
+                        size-4 text-black" />
 
                     </Button>
                 </SheetTrigger>

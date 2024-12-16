@@ -8,9 +8,7 @@ const Header = () => {
    
   return (
     <header
-      className="bg-gradient-to-b from-gray-900 to-black
-
-px-4 py-8 lg:px-14 pb-36"
+      className="bg-[url('/bg.png')] bg-cover bg-center bg-no-repeat px-4 py-8 lg:px-14 pb-36"
     >
       <div className="max-w-screen-2xl mx-auto">
         <div

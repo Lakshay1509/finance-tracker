@@ -9,11 +9,11 @@ const WelcomeMssg = () => {
     <div className="space-y-2 mb-4 tracking-wide">
             <h2 className="text-2xl lg:text-4xl text-gray-300
  font-primary font-semibold text-center ">
-                Welcome Back {isLoaded ? ",":" "}{user?.fullName}👋
+                Welcome Back {isLoaded ? ",":" "}{user?.fullName}
             </h2>
-            <p className="text-sm font-primary text-center lg:text-base text-[#89b6fd]">
+            {/* <p className=" text-xl font-bold font-primary text-center lg:text-black text-black">
                 This is your Financial Dashboard
-            </p>
+            </p> */}
         </div>
   )
 }
