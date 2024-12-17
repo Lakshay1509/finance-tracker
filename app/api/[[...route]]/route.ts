@@ -4,6 +4,7 @@ import { handle } from 'hono/vercel'
 
 
 import accounts from './account'
+import categories from './categories'
 import { HTTPException } from 'hono/http-exception'
 
 export const runtime = 'edge'
@@ -20,6 +21,7 @@ app.onError((e, c) => {
 
 const routes = app
   .route("/accounts",accounts)
+  .route("/categories",categories)
 
 export const GET = handle(app)
 export const POST = handle(app)
