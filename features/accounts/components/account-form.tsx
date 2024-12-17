@@ -1,6 +1,5 @@
 import {z} from 'zod';
 import {useForm} from 'react-hook-form';
-import { Trash } from 'lucide-react';
 import {zodResolver} from '@hookform/resolvers/zod';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
@@ -30,6 +29,7 @@ type Props = {
     onSubmit:(values:FormValues)=>void;
     onDelete?:()=>void;
     disabled?:boolean;
+    
 }
 
 
@@ -46,9 +46,7 @@ export const AccountForm= ({id,initialValues,onSubmit,onDelete,disabled}:Props)=
         onSubmit(values);
     }
 
-    const handleDelete = ()=>{
-        onDelete?.();
-    }
+   
 
     return(
 
@@ -79,10 +77,7 @@ export const AccountForm= ({id,initialValues,onSubmit,onDelete,disabled}:Props)=
                     {id ? 'Update Account' : 'Create Account'}
                 </Button>
                 
-                {!!id &&<Button type='button' disabled={disabled} onClick={handleDelete} className='w-full'>
-                    <Trash size={24} className='mr-2'/>
-                    Delete Account
-                </Button>}
+                
 
             </form>
 

@@ -26,6 +26,7 @@ import {
 import { Button } from "./ui/button";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
+import { Trash } from "lucide-react";
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -71,7 +72,7 @@ export function DataTable<TData, TValue>({
           placeholder={`Filter ${filterKey}`}
           value={(table.getColumn(filterKey)?.getFilterValue() as string) ?? ""}
           onChange={(event) =>
-            table.getColumn("email")?.setFilterValue(event.target.value)
+            table.getColumn(filterKey)?.setFilterValue(event.target.value)
           }
           className="max-w-sm "
         />
@@ -86,7 +87,7 @@ export function DataTable<TData, TValue>({
               table.resetRowSelection();
             }}
           >
-            🗑️{`Delete (${table.getFilteredSelectedRowModel().rows.length})`}
+            <Trash/>{`Delete (${table.getFilteredSelectedRowModel().rows.length})`}
           </Button>
         )}
       </div>
